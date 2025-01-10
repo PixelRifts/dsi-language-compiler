@@ -1,0 +1,16 @@
+
+main :: func () {
+	write 0x4000304, cast(u32) 0x8003;
+	write 0x4000000, cast(u32) 0x20000;
+	write 0x4000240, cast(u8)  0x80;
+
+	poke16 := cast(^u16) 0x06800000;  // Screen Base Pointer
+
+	k := 256 * 192;
+	// 000001000011111
+	while k {
+		poke16^ = cast(u16) 0x021F;
+		poke16 = poke16 + (cast(^u16) 2);
+		k = k - 1;
+	}
+};
