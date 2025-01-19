@@ -31,7 +31,7 @@ I don't think anything else is required for reproducing these results
 
 
 ### Stage 0
-Unoptimised Output (Just a dumb stack machine)
-
-Frame 0 Average: 0.095 s
-Frametime Average: 0.00739675 s
+Unoptimised Output (Just a dumb stack machine)  
+  
+Frame 0 Average: 0.095 s  
+Frametime Average: 0.00739675 s  
