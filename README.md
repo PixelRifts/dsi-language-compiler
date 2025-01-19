@@ -20,7 +20,8 @@ Every run will capture the average time for 1000 frames.
 
 
 ## Current measurements
-Running on my laptop with no FrameTime limit and Advanced Bus Timing enabled.
+
+Running the pong example on my laptop with no FrameTime limit and Advanced Bus Timing enabled.
 
 ### Laptop Specs:
 Processor: 12th Gen Intel(R) Core(TM) i5-12450H   2.00 GHz  (12 Cores)  
