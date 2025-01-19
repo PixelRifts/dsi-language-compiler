@@ -1,0 +1,25 @@
+// NOTE(voxel): Doesn't work yet
+
+
+	// // Timer Setup - TM(0/1/2/3)CNT_H
+	// // Timer 0 doesn't count up from previous timer.
+	// //       T0   =  00000000 10000000
+	// //       T1-3 =  00000000 10000100
+	// write 0x4000107, cast(u8) 0x84;
+	// write 0x400010B, cast(u8) 0x84;
+	// write 0x400010F, cast(u8) 0x84;
+  // // T0 Set last to start timer at the last possible second
+
+
+main :: func () {
+	write 0x4000100, cast(u16) 0x0000;
+	write 0x4000102, cast(u16) 0x0084;
+
+	pxx := 4096;
+	while pxx {
+		pxx = pxx - 1;
+	}
+
+  c := (cast(^u16) 0x4000100)^;
+  while 1 {}
+};
