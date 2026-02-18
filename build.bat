@@ -22,15 +22,15 @@ REM ==============
 
 REM ==============
 if %cc% == cl.exe (
-  SET compiler_flags=/Zc:preprocessor /wd4090 /wd5105 /nologo
-  SET include_flags=/I.\source\ /I.\third_party\include\ /I.\third_party\source\
+  SET compiler_flags=/Zc:preprocessor /wd4090 /wd5105 /nologo /FC
+  SET include_flags=/I ".\source\" /I ".\third_party\include\" /I ".\third_party\source\"
   SET linker_flags=/link /DEBUG:FULL Winmm.lib Shell32.lib Userenv.lib
   SET output=/Fe.\bin\%name% /Fo.\bin\int\
   SET defines=/D_DEBUG /D_CRT_SECURE_NO_WARNINGS
 )
 
 if %cc% == clang (
-  SET compiler_flags=-Wall -Wvarargs -Werror -Wno-unused-function -Wno-format-security -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unused-but-set-variable -Wno-int-to-void-pointer-cast
+  SET compiler_flags=-Wall -Wvarargs -Werror -Wno-unused-function -Wno-format-security -Wno-incompatible-pointer-types-discards-qualifiers -Wno-unused-but-set-variable -Wno-int-to-void-pointer-cast -Wno-microsoft-enum-forward-reference -fdiagnostics-absolute-paths
   SET include_flags=-Isource -Ithird_party/include -Ithird_party/source
   SET linker_flags=-g -lwinmm -lshell32 -luserenv
   SET output=-obin/%name%.exe
@@ -38,7 +38,7 @@ if %cc% == clang (
 )
 REM ==============
 
-REM SET compiler_flags=!compiler_flags! -fsanitize=address
+SET compiler_flags=!compiler_flags! -fsanitize=address
 
 ECHO Building %name%.exe...
 %cc% %compiler_flags% %c_filenames% %defines% %include_flags% %output% %linker_flags%

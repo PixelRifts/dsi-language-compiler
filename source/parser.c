@@ -1,6 +1,7 @@
 
 #include "parser.h"
 #include "base/log.h"
+#include "lexer.h"
 
 #define ParserError(p, t, f, ...) Statement(\
 printf("%.*s:%d:%d - Parse Error - " f,\

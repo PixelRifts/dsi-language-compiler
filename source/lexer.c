@@ -168,7 +168,6 @@ Token_array Lexer_Lex(Lexer* lexer, string source) {
     lexer->col++;
     
     switch (c) {
-      
       case '+': darray_add(Token, &tokens, make_token(lexer, TT_Plus)); break;
       case '*': darray_add(Token, &tokens, make_token(lexer, TT_Star)); break;
       case '%': darray_add(Token, &tokens, make_token(lexer, TT_Percent)); break;
