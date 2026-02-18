@@ -5,8 +5,8 @@ IF NOT EXIST bin\int mkdir bin\int
 
 SET name=compile
 
-call vcvarsall.bat x64
-SET cc=cl.exe
+REM call vcvarsall.bat x64
+SET cc=clang
 
 REM ------------------
 REM    Main Project

@@ -57,7 +57,7 @@ enum TacOp {
   
   TacOp_Param,
   TacOp_Call,
-} TacOp;
+};
 
 typedef struct TacInst TacInst;
 struct TacInst {

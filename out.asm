@@ -33,7 +33,7 @@ HeaderStart:
   .long 0                       ;068h    4     Icon/Title offset (0=None) (8000h and up)
   .word 0                       ;06Ch    2     Secure Area Checksum, CRC-16 of [[020h]..00007FFFh]
   .word 0                       ;06Eh    2     Secure Area Delay (in 131kHz units) (051Eh=10ms or 0D7Eh=26ms)
-  .long 0                       ;070h    4     ARM9 Auto Load List Hook RAM Address (?) ;ndaddr of auto-load
+  .long 0                       ;070h    4     ARM9 Auto Load List Hook RAM Address (?) ;\endaddr of auto-load
   .long 0                       ;074h    4     ARM7 Auto Load List Hook RAM Address (?) ;/functions
   .space 8                      ;078h    8     Secure Area Disable (by encrypted "NmMdOnly") (usually zero)
   .long 0                       ;080h    4     Total Used ROM size (remaining/unused bytes usually FFh-padded)
